@@ -12,26 +12,26 @@
 
 <body>
 
-  <form action="">
+  <form class="col-6 offset-3">
     <br>
     <div class="form-group ">
-      <label class="col-2 col-form-labe" for="name">Nombre completo</label>
-      <div class="col-10">
-        <input id="name" name="name" />
+      <label class="col-6 col-form-labe" for="name">Nombre completo</label>
+      <div class="col-12">
+        <input class="col-10"id="name" name="name" />
       </div>
     </div>
     <div class="form-group">
-      <label class="col-2 col-form-labe" for="cn">Número de tarjeta</label>
-      <div class="col-10">
-        <input id="creditNumber" id="cn" name="cn">
+      <label class="col-6 col-form-labe" for="cn">Número de tarjeta</label>
+      <div class="col-12">
+        <input class="col-7" id="creditNumber" id="cn" name="cn">
         <span id="resul"></span>
       </div>
     </div>
     <div class="form-group ">
-      <label class="col-2 col-form-labe" for="exp">Fecha de vencimiento</label>
+      <label class="col-6 col-form-labe" for="exp">Fecha de vencimiento</label>
       <div class="form-group row">
-        <label class="col-1 col-form-label text-center" for="exp">Mes</label>
-        <select class="form-control col-1" id="select-month">
+        <label class="col-2 col-form-label text-center" for="exp">Mes</label>
+        <select class="form-control col-2" id="select-month">
           <option class="optMonth" value="...">...</option>         
           <option class="optMonth" value="1">1</option>
           <option class="optMonth" value="2">2</option>
@@ -48,8 +48,8 @@
         </select>
       </div>
       <div class="form-group row">
-        <label class="col-1 col-form-label text-center" for="exp">Año</label>
-        <select class="form-control col-1" id="select-year">
+        <label class="col-2 col-form-label text-center" for="exp">Año</label>
+        <select class="form-control col-2" id="select-year">
           <option class="optYear" value="...">...</option>  
           <option class="optYear" value="2017">2018</option>
           <option class="optYear" value="2018">2018</option>
@@ -77,19 +77,18 @@
       </div>
     </div>
     <div class="form-group row">
-      <label class="col-1 col-form-labe text-center" for="cvv">cvv</label>
-      <div class="col-2">
+      <label class="col-2 col-form-labe text-center" for="cvv">cvv</label>
+      <div class="col-4">
         <input class="col-6 text-center" id="cvv" name="cvv" placeholder="###" />
       </div>
     </div>
-    <input type="button" onClick="isValidCard(),monthFunct(),yearFunct();"  value="Validar Tarjetas" id="btnSend">
+    <input type="button" onClick="isValidCard()"  value="Validar Tarjeta" id="btnSend">
   </form>
 
   <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"crossorigin="anonymous"></script>
   <script src="./js/assets/bootstrap.min.js"></script>
-  <script src="js/app.js"></script>
+  <script type="module" src="node.js"></script>
 </body>
 
 </html>
