@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "basic-card-validator": "^1.0.10"
+    "basic-card-validator": "^1.0.10",
+    "uniq": "^1.0.1"
   },
   "devDependencies": {},
   "scripts": {
