@@ -1,14 +1,21 @@
 
 const basicCardValidator = require('basic-card-validator');
-const cardValidator = basicCardValidator.card;
-let valInput = document.getElementById("creditNumber").value;
-console.log(valInput);
-console.log(cardValidator);
+console.log(basicCardValidator.card(1234567890123456));
 
-let btnSend = document.getElementById("btnSend")
+
+const btnSend = document.getElementById("btnSend")
 
 btnSend.addEventListener("click",function(){
-        cardFunction();
+    let basicCardValidator = require('basic-card-validator');
+    let valInput = document.getElementById("creditNumber").value;
+
+    console.log(basicCardValidator.card(1234567890123456));
+
+
+
+    // if (basicCardValidator.card(valInput)=== true){
+    //     document.getElementById("resul").innerHTML = "Numero de tarjeta: " + creditNumber + " es Valido ";
+    // }
 });
 
 
