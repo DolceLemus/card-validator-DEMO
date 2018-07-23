@@ -1,22 +1,16 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 
-const basicCardValidator = require('basic-card-validator');
-console.log(basicCardValidator.card(1234567890123456));
-
-
-const btnSend = document.getElementById("btnSend")
+const btnSend = document.getElementById("btnSend");
 
 btnSend.addEventListener("click",function(){
-    let basicCardValidator = require('basic-card-validator');
+    let isValidCard = require('card');
     let valInput = document.getElementById("creditNumber").value;
 
-    console.log(basicCardValidator.card(1234567890123456));
-
-
-
-    // if (basicCardValidator.card(valInput)=== true){
-    //     document.getElementById("resul").innerHTML = "Numero de tarjeta: " + creditNumber + " es Valido ";
-    // }
+    if (isValidCard(valInput)=== true){
+        document.getElementById("resul").innerHTML = "Numero de tarjeta: " + creditNumber + " es Valido ";
+    } else {
+        alert("Error");
+    }
 });
 
 
@@ -36,18 +30,12 @@ btnSend.addEventListener("click",function(){
 
 
 
-},{"basic-card-validator":2}],2:[function(require,module,exports){
-const card = require("./lib/card");
-const name = require("./lib/name");
-const cvv = require("./lib/cvv");
-const date = require("./lib/date");
-
-module.exports = {card,name,cvv,date};
-
-},{"./lib/card":3,"./lib/cvv":4,"./lib/date":5,"./lib/name":6}],3:[function(require,module,exports){
+},{"card":2}],2:[function(require,module,exports){
 'use strict';
-// validar que la tarjeta solo sean numeros y 16 numeros
-(function () {
+// const validateNumCard = (creditNumber) => {
+//   return  /^([0-9]){16}$/.test(creditNumber);
+// }
+
 
   // Validar los numeros de tarjeta por Lunm
   const isValidCard = (creditNumber) => {
@@ -83,92 +71,8 @@ module.exports = {card,name,cvv,date};
       return false
     }
   }
-
-  if (typeof window == "undefined") {
-    console.log("consola");
     module.exports = isValidCard;
-  } else {
-    console.log("navegador");
-    window.isValidCard = isValidCard;
-  }
-})();
 
 
-},{}],4:[function(require,module,exports){
-'use strict';
-// validar cvv solo sean numeros y 3 digitos
-(function () {
-
-const validateNumCvv = (cvv) => {
-    return  /^([0-9]){3}$/.test(cvv);
-  }
-
-  if (typeof window == "undefined") {
-    console.log("consola");
-    module.exports = validateNumCvv;
-  } else {
-    console.log("navegador");
-    window.validateNumCvv = validateNumCvv;
-  }
-  
-})();
-
-},{}],5:[function(require,module,exports){
-'use strict';
-(function () {
-
-    // DATE
-    const dateFunct = (month, year) => {
-        let today = new Date();
-        let year4Dig = today.getFullYear();
-        let year2Dig = year4Dig.toString().substr(-2);
-
-        let num2DigMonthTest = /^[0-9]{2}$/.test(month);
-        let num2DigYearTest = /^[0-9]{2}$/.test(year);
-
-        // months
-        if (num2DigMonthTest === true && month < 13) {
-            return true;
-        } else {
-            return false;
-        }
-        // years
-        if (num2DigYearTest === true && year >= year2Dig) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    if (typeof window == "undefined") {
-        console.log("consola");
-        module.exports = dateFunct;
-    } else {
-        console.log("navegador");
-        window.dateFunct = dateFunct;
-    }
-
-})();
-
-
-},{}],6:[function(require,module,exports){
-'use strict';
-
-(function () {
-
-  // Validar nombre que solo contenga letras
-  const validateName = (name) => {
-    return /^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$/.test(name);
-  }
-
-  if (typeof window == "undefined") {
-    console.log("consola");
-    module.exports = validateName;
-  } else {
-    console.log("navegador");
-    window.validateName = validateName;
-  }
-
-})();
 
 },{}]},{},[1]);

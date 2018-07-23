@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/DolceLemus/card-validator-DEMO/issues"
   },
-  "homepage": "https://github.com/DolceLemus/card-validator-DEMO#readme"
+  "homepage": "https://github.com/DolceLemus/card-validator-DEMO#readme",
+  "browser": {
+    "card": "./node_modules/basic-card-validator/src/card.js",
+    "name": "./node_modules/basic-card-validator/src/name.js",
+    "cvv": "./node_modules/basic-card-validator/src/cvv.js",
+    "date": "./node_modules/basic-card-validator/src/date.js"
+
+  }
 }
